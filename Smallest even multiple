@@ -1,0 +1,14 @@
+class Solution(object):
+    def smallestEvenMultiple(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+
+        num = 2
+        while True:
+            if (num % 2 == 0) and (num % n  == 0):
+                break
+            num += 2
+
+        return num
