@@ -1,0 +1,40 @@
+# My solution
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        new =""
+        i  = 0
+        j = 0
+
+        while i < len(word1) and j < len(word2):
+            new += word1[i] + word2[j]
+            i += 1
+            j += 1
+
+        if i < len(word1):
+            new += word1[i:]
+            
+        if j < len(word2):
+            new += word2[j:]
+
+        return new         
+
+
+
+
+
+
+
+
+
+# Most efficient sloution
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        res = []
+        n = max(len(word1), len(word2))
+        for i in range(n):
+            if i < len(word1):
+                res.append(word1[i])
+            if i < len(word2):
+                res.append(word2[i])
+
+        return "".join(res)
