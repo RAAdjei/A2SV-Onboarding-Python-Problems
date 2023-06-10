@@ -1,0 +1,17 @@
+n = int(input())
+scores = list(map(int, input().split()))
+
+
+low_score = scores[0]
+high_score =scores[0]
+count = 0
+    
+for i in range(1, n):
+    if scores[i] > high_score:
+        high_score = scores[i]
+        count += 1
+    elif scores[i] < low_score:
+        low_score = scores[i]
+        count += 1
+            
+print(count)
