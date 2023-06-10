@@ -1,0 +1,15 @@
+from collections import Counter
+
+n = int(input())
+words = []
+
+for _ in range(n):
+    words += list(input().split())
+
+words = Counter(words)
+values = ' '.join(str(value) for value in words.values())
+
+words = set(words)
+count = len(words)
+print(count)
+print(values)
