@@ -1,0 +1,28 @@
+t = int(input())
+
+for _ in range(t):
+    input()
+    chess = []
+    chess_dict = {}
+    value = []
+    
+    for i in range(8):
+        squares_row = list(input())
+        chess.append(squares_row)
+        chess_dict[i] = squares_row.count("#")
+        
+    for i in range(1, 7):
+        if chess_dict[i] == 1 and chess_dict[i-1] == 2 and chess_dict[i+1] == 2:
+            value.append(i)
+            break
+    
+    row_bishop = chess[value[0]]
+    
+    for i in range(len(row_bishop)):
+        if row_bishop[i] == "#":
+            value.append(i)
+            break
+        
+    print(value[0]+1, value[1]+1)
+        
+        
