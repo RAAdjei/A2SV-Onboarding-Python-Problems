@@ -1,0 +1,19 @@
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+
+        for i in nums:
+            if i == 0:
+                index = nums.index(i)
+                nums.pop(index)
+                nums.append(i)
+                
+  
+  
+  
+  """
+  Time - O(N)
+  Space - 0(1)
+  """
