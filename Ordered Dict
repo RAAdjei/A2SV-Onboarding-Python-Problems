@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from collections import OrderedDict
+
+items_dict = OrderedDict()
+
+N = int(input())
+
+for _ in range(N):
+    string = input().split()
+    item = " ".join(string[:-1])
+    price = int(string[-1])
+
+    if item in items_dict:
+        items_dict[item] = items_dict[item] + price
+    else:
+        items_dict[item] = price
+
+
+for key, value in items_dict.items():
+    print(key, value)
+
+
+
+#Time complexity = O(n + m)
+#Space complexity = O(N)
