@@ -1,0 +1,16 @@
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+
+        count = 0
+        for _ in range(len(s)//2):
+            s[count], s[-1-count] = s[-1-count], s[count]
+            count += 1
+
+
+"""
+Time: 0(N)
+Space: O(N)
+"""
