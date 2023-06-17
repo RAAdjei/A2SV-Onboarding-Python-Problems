@@ -1,0 +1,15 @@
+c, r = list(map(int, input().split()))
+nums = []
+
+for i in range(r):
+    nums.append(list(map(float, input().split())))
+zipped = zip(*nums)
+for i in zipped:
+    print(sum(i)/r)
+
+
+
+"""
+Time - O(n+m)
+Space - O(1)
+"""
