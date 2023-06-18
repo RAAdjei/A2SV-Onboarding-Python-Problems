@@ -1,0 +1,24 @@
+from collections import defaultdict
+
+d= defaultdict(list)
+m,n = map(int, input().split())
+lst = []
+ 
+for i in range(m):
+    a = input()
+    d[a].append(i+1)
+for i in range(n):
+    b = input()
+    lst = lst + [b]
+for i in lst:
+    if i in d:
+        print(' '.join(map(str, d[i])))
+    else:
+        print("-1")
+        
+        
+        
+"""
+Time - O(n + m + a)
+Space = O(N)
+"""
