@@ -1,0 +1,21 @@
+from collections import Counter
+
+num_shoes = int(input())
+sizes = map(int, input().split())
+num_customers = int(input())
+
+shoes = Counter(sizes)
+income = 0
+
+for i in range(num_customers):
+    size, price = map(int, input().split())
+    if shoes[size]:
+        income += price
+        shoes[size] -= 1
+        
+print(income)
+
+"""
+Time - O(N)
+Space - O(N)
+"""
