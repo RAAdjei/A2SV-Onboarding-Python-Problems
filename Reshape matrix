@@ -1,0 +1,21 @@
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+
+        rows = len(mat)
+        cols = len(mat[0])
+        reshape = []
+
+        if rows * cols != r * c:
+            return mat
+
+        flat = [mat[i][j] for i in range(rows) for j in range(cols)]
+
+        reshape = [flat[i:i+c] for i in range(0,len(flat), c)]
+
+        return reshape
+
+
+"""
+Time - O(n+m)
+Space - O(N)
+"""
