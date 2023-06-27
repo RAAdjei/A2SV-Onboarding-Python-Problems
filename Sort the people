@@ -1,0 +1,35 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        # Using Bubble sort
+        
+        len_heights = len(heights)
+
+        for i in range(len_heights-1):
+            for j in range(len_heights-i-1):
+                if heights[j] < heights[j+1]:
+                    heights[j], heights[j+1] = heights[j+1], heights[j]
+                    names[j], names[j+1] = names[j+1], names[j]
+
+
+        return names
+
+
+        # Using selection sort
+
+        for i in range(len_heights-1):
+            min_pointer = i
+            for j in range (i+1, len_heights):
+                if heights[j] > heights[min_pointer]:
+                    min_pointer = j
+
+            heights[i], heights[min_pointer] = heights[min_pointer], heights[i]
+            names[i], names[min_pointer] = names[min_pointer], names[i]
+
+        return names
+
+
+
+"""
+Time = O(N^2)
+Space = O(N^2)
+"""
