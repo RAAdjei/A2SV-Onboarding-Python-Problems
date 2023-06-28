@@ -1,0 +1,16 @@
+    str = input()
+     
+    new = set(str)
+    new = list(new)
+     
+    if len(new) % 2 == 0:
+        print("CHAT WITH HER!")
+    else:
+        print("IGNORE HIM!")
+
+
+
+"""
+Time - O(N)
+Space - 0(N)
+"""
