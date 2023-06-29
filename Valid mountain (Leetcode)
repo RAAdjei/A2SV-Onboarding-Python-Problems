@@ -1,0 +1,22 @@
+class Solution:
+    def validMountainArray(self, arr: List[int]) -> bool:
+        n = len(arr)
+        max_val = max(arr)
+
+        if n < 3 or max_val == arr[-1] or max_val == arr[0]:
+            return False
+
+        else:
+            for i in range(0, arr.index(max_val)):
+                
+                if arr[i] == arr[i+1] or arr[i] > arr[i+1]:
+                    return False
+            for j in range(arr.index(max_val), n-1):
+                if arr[j] == arr[j+1] or arr[j] < arr[j+1]:
+                    return False
+        
+        return True
+"""
+Time - O(N)
+Space - O(1)
+"""
