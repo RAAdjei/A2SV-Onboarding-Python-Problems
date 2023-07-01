@@ -1,0 +1,25 @@
+n = int(input())
+nums = list(map(int, input().split()))
+
+num_sum = sum(nums)
+
+indexes = []
+
+for i in range(n):
+    other_sum = num_sum - nums[i]
+    ave = other_sum / (n-1)
+    if nums[i] == ave:
+        indexes.append(i+1)
+        
+if len(indexes) == 0:
+    print(0)
+else:
+    print(len(indexes))
+    print(' '.join(map(str, indexes)))
+
+
+
+"""
+Time - O(N)
+Space - O(N)
+"""
