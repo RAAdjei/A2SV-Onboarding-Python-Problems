@@ -1,0 +1,26 @@
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        output = 0
+        count = 0
+        n = len(piles)
+        piles.sort()
+        piles.pop()
+
+        if n == 1:
+            return 1
+        if n == 0:
+            return 0
+
+        for i in range(n-2, -2, -2):
+            output += piles[i]
+            count += 1
+            if count == n / 3:
+                break
+
+        return output
+
+
+"""
+Time - O(nlogn)
+Soace - O(1)
+"""
