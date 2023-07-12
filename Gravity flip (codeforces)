@@ -1,0 +1,29 @@
+import sys
+input = sys.stdin.readline
+
+############ ---- Input Functions ---- ############
+def inp():
+    return(int(input()))
+def inlt():
+    return(list(map(int,input().split())))
+def insr():
+    s = input()
+    return(list(s[:len(s) - 1]))
+def invr():
+    return(map(int,input().split()))
+
+
+
+
+n = inp()
+cubes = inlt()
+
+cubes.sort()
+for cube in cubes:
+    print(cube, end=" ")
+
+
+"""
+Time - O(N)
+Space - O(1)
+"""
