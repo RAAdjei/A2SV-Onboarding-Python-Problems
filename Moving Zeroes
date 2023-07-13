@@ -4,11 +4,21 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
 
-        for i in nums:
-            if i == 0:
-                index = nums.index(i)
-                nums.pop(index)
-                nums.append(i)
+        # for i in nums:
+        #     if i == 0:
+        #         index = nums.index(i)
+        #         nums.pop(index)
+        #         nums.append(i)
+
+
+        holder = 0
+
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[holder], nums[i] = nums[i], nums[holder]
+                holder += 1
+        return nums
+
                 
   
   
