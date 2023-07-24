@@ -1,0 +1,21 @@
+t = int(input())
+ 
+for _ in range(t):
+    char = input()
+    
+    dist = set()
+ 
+    left = 0
+    while left < len(char):
+        if left+1 < len(char) and char[left] == char[left+1]:
+            left += 1
+        else:
+            dist.add(char[left])
+        left += 1
+    sorted_char = sorted(dist)
+    print(''.join(sorted_char))
+
+"""
+O(NLogN)
+O(N)
+"""
