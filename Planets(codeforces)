@@ -1,0 +1,22 @@
+from collections import defaultdict
+
+t = int(input())
+
+for _ in range(t):
+    n, c = map(int, input().split())
+    a = list(map(int, input().split()))
+    
+    count = defaultdict(int)
+    res  = 0
+    
+    for i in range(n):
+        count[a[i]] += 1
+        if count[a[i]] <= c:
+            res += 1
+            
+    print(res)
+
+"""
+Time - O(N)
+Space - O(N)
+"""
