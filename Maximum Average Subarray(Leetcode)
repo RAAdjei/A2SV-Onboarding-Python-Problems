@@ -1,0 +1,18 @@
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        curr_sum = sum(nums[:k])
+        max_ave = curr_sum / k
+
+        for i in range(1, len(nums)-k+1):
+            curr_sum = curr_sum - nums[i-1] + nums[i+k-1]
+            curr_ave = curr_sum / k
+
+            max_ave = max(max_ave, curr_ave)
+
+        return max_ave
+
+
+"""
+Time - O(N)
+Space - O(1)
+"""
