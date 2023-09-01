@@ -1,0 +1,18 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        ans = [1]*(len(nums))
+        presum = 1
+
+        for i in range(len(nums)):
+            ans[i] = presum
+            presum *= nums[i]
+        postsum = 1
+        for i in range(len(nums) -1, -1, -1):
+            ans[i] *= postsum
+            postsum *= nums[i]
+        return ans
+
+"""
+Time - O(N)
+Space - O(N)
+"""
