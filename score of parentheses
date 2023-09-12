@@ -1,0 +1,27 @@
+class Solution:
+    def scoreOfParentheses(self, s: str) -> int:
+        stack = []
+
+        val = 0
+        res = 0
+        for char in s:
+            if char == "(":
+                stack.append(0)
+            elif char == ")":
+                close = stack.pop()
+               
+                if close == 0:
+                    val = 1
+                else:
+                    val = close * 2
+                if not stack:
+                    res += val
+                else:
+                    stack[-1] += val
+        return res
+
+
+"""
+Time = O(N)
+Space = (1)
+"""
