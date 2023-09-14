@@ -1,0 +1,63 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        output = []
+        start, end = -1, -1
+        if target in nums:
+            start = bisect_left(nums, target)
+            end = bisect_right(nums, target)-1
+        else:
+            start, end = -1, -1
+
+        return [start, end]
+
+"""
+Time - O(LogN)
+Sapce - O(1)
+"""
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        # low, high = 0, len(nums)-1
+        # start, end = -1, -1
+        # output = []
+
+        # while low <= high:
+        #     mid = low + (high - low) // 2
+        #     if mid == target:
+        #         if nums[mid-1] == target and nums[mid+1] != target:
+        #             start = mid -1
+        #             end = mid
+        #         elif nums[mid-1] != target and nums[mid+1] == target:
+        #             start = mid
+        #             end = mid + 1
+        #         else:
+        #             start = mid
+        #             end = mid
+
+        #     elif mid < target:
+        #         low = mid + 1
+        #     else:
+        #         high = mid - 1
+
+        
+        # output.append(start)
+        # output.append(end)
+        # return output
+
+
+                 
+
+        
