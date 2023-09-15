@@ -1,0 +1,25 @@
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low, high = 0, n-1
+        peak = n-1
+        last = float('-inf')
+        nums.append(last)
+        
+
+        while low <= high:
+            mid = low + (high - low) // 2
+            if nums[mid] > nums[mid+1] and nums[mid] > nums[mid-1]:
+                peak = mid
+                break
+            elif nums[mid] > nums[mid-1] and nums[mid] < nums[mid+1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return peak
+
+"""
+Time - O(LogN)
+Space - O(1)
+"""
